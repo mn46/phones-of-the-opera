@@ -1,0 +1,347 @@
+body {
+    font-family: Freight Display Pro Book;
+    font-size: 16px;
+}
+
+#container_sound {
+    height: 2.5em;
+    width: auto;
+}
+
+/* for JS */
+
+.sound_on {
+    background-image: url(../assets/sound.svg);
+    background-repeat: no-repeat;
+}
+
+.sound_off {
+    background-image: url(../assets/no-sound.svg);
+    background-repeat: no-repeat;
+}
+
+/* the game */
+
+#game_screen {
+    height: 40em;
+    aspect-ratio: 16/9;
+    position: relative;
+}
+
+#game_background {
+    max-height: 40em;
+    width: auto;
+    aspect-ratio: 16/9;
+    background-image: url(../assets/background.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* points */
+
+#health {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    height: 3em;
+    width: 18em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.heart {
+    height: 2.2em;
+    aspect-ratio: 29/25;
+    background-image: url(../assets/heart.svg);
+    background-repeat: no-repeat;
+}
+
+#applause {
+    position: absolute;
+    top: 16%;
+    left: 4%;
+    height: 2.6em;
+    aspect-ratio: 150/23;
+    background-image: url(../assets/satisfaction.svg);
+    background-repeat: no-repeat;
+}
+
+#points_container {
+    position: absolute;
+    height: 2em;
+    width: 13em;
+    top: 16.7%;
+    left: 9.4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* points */
+
+.point1 {
+    height: 1.8em;
+    aspect-ratio: 21/50;
+    margin-right: 0.5em;
+    background-image: url(../assets/point.svg);
+    background-repeat: no-repeat;
+    animation: points 0.5s linear;
+}
+
+.point2 {
+    height: 1.8em;
+    aspect-ratio: 21/50;
+    margin-right: 0.5em;
+    background-image: url(../assets/point.svg);
+    background-repeat: no-repeat;
+    animation: points 0.5s linear;
+}
+
+.point3 {
+    height: 1.8em;
+    aspect-ratio: 21/50;
+    margin-right: 0.5em;
+    background-image: url(../assets/point.svg);
+    background-repeat: no-repeat;
+    animation: points 0.5s linear;
+}
+
+.point4 {
+    height: 1.8em;
+    aspect-ratio: 21/50;
+    margin-right: 0.5em;
+    background-image: url(../assets/point.svg);
+    background-repeat: no-repeat;
+    animation: points 0.5s linear;
+}
+
+.point5 {
+    height: 1.8em;
+    aspect-ratio: 21/50;
+    margin-right: 0.5em;
+    background-image: url(../assets/point.svg);
+    background-repeat: no-repeat;
+    animation: points 0.5s linear;
+}
+
+.point6 {
+    height: 1.8em;
+    aspect-ratio: 21/50;
+    margin-right: 0.5em;
+    background-image: url(../assets/point.svg);
+    background-repeat: no-repeat;
+    animation: points 0.5s linear;
+}
+
+.point7 {
+    height: 1.8em;
+    aspect-ratio: 21/50;
+    margin-right: 0.5em;
+    background-image: url(../assets/point.svg);
+    background-repeat: no-repeat;
+    animation: points 0.5s linear;
+}
+
+.point8 {
+    height: 1.8em;
+    aspect-ratio: 21/50;
+    margin-right: 0.5em;
+    background-image: url(../assets/point.svg);
+    background-repeat: no-repeat;
+    animation: points 0.5s linear;
+}
+
+.point9 {
+    height: 1.8em;
+    aspect-ratio: 21/50;
+    margin-right: 0.5em;
+    background-image: url(../assets/point.svg);
+    background-repeat: no-repeat;
+    animation: points 0.5s linear;
+}
+
+.point10 {
+    height: 1.8em;
+    aspect-ratio: 21/50;
+    margin-right: 0.5em;
+    background-image: url(../assets/point.svg);
+    background-repeat: no-repeat;
+    animation: points 0.5s linear;
+}
+
+/* timer */
+
+#time {
+    position: absolute;
+    top: 5%;
+    left: 80%;
+    height: 3em;
+    width: auto;
+    font-size: 1em;
+}
+
+
+/* pavarotti */
+
+#container_pavarotti {
+    position: absolute;
+    height: 20em;
+    aspect-ratio: 131/150;
+    left: 40%;
+    top: 8.5%;
+}
+
+.sprite_pavarotti {
+    height: 24em;
+    aspect-ratio: 131/150;
+    background-image: url(../assets/singing-pavarotti.svg);
+    background-repeat: no-repeat;
+}
+
+/* for JS */
+
+.angry_pavarotti {
+    height: 24em;
+    aspect-ratio: 131/150;
+    background-image: url(../assets/angry-pavarotti.svg);
+    background-repeat: no-repeat;
+}
+
+
+/* phone bubble */
+
+#container_phone {
+    position: absolute;
+    height: 8em;
+    aspect-ratio: 41/30;
+    animation: fade_out 4s infinite;
+}
+
+.sprite_phone {
+    height: 8em;
+    aspect-ratio: 41/30;
+    background-image: url(../assets/phone.svg);
+    background-repeat: no-repeat;
+}
+
+/* applause bubble */
+
+#container_applause {
+    position: absolute;
+    height: 7em;
+    aspect-ratio: 16/10;
+    animation: fade_out 4s infinite;
+    animation-delay: 3s;
+}
+
+.sprite_applause {
+    height: 7em;
+    aspect-ratio: 16/10;
+    background-image: url(../assets/wow.svg);
+    background-repeat: no-repeat;
+}
+
+/* angry bubble */
+
+#container_angry {
+    position: absolute;
+    height: 7em;
+    aspect-ratio: 16/10;
+    animation: fade_out 4s infinite;
+    animation-delay: 6s;
+}
+
+.sprite_angry {
+    height: 7em;
+    aspect-ratio: 16/10;
+    background-image: url(../assets/angry.svg);
+    background-repeat: no-repeat;
+}
+
+/* positions */
+
+.position1 {
+    left: 10%;
+    top: 60%;
+}
+
+.position2 {
+    left: 20%;
+    top: 70%;
+}
+
+.position3 {
+    left: 30%;
+    top: 80%;
+}
+
+.position4 {
+    left: 40%;
+    top: 60%;
+}
+
+.position5 {
+    left: 50%;
+    top: 70%;
+}
+
+.position6 {
+    left: 60%;
+    top: 80%;
+}
+
+.position7 {
+    left: 70%;
+    top: 60%;
+}
+
+.position8 {
+    left: 80%;
+    top: 70%;
+}
+
+.position9 {
+    left: 70%;
+    top: 80%;
+}
+
+.position10 {
+    left: 60%;
+    top: 60%;
+}
+
+.position11 {
+    left: 50%;
+    top: 70%;
+}
+
+.position12 {
+    left: 40%;
+    top: 80%;
+}
+
+.position13 {
+    left: 30%;
+    top: 60%;
+}
+
+/* animations */
+
+@keyframes fade_out {
+    0% {opacity: 0%;}
+    100% {opacity: 0%;}
+}
+
+@keyframes good_click {
+    0% {transform: scaleZ(110%); opacity: 100%;}
+    50% {transform: scaleZ(130%); opacity: 100%;}
+    100% {transform: scaleZ(0%); opacity: 100%;}
+}
+
+@keyframes points {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+}

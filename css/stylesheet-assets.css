@@ -1,0 +1,77 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    margin: 2em;
+}
+
+#singer, #positive, #clap, #angry, #snooze, #points, #buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.pavarotti {
+    width: 21em;
+    height: auto;
+}
+
+.speech {
+    width: 13em;
+    height: auto;
+    margin: 2em;
+}
+
+#phone {
+    width: 8em;
+    height: auto;
+    margin: 2em;
+}
+
+#hands {
+    width: 5.5em;
+    height: auto;
+    margin: 2em;
+}
+
+#knot {
+    width: 5.3em;
+    height: auto;
+    margin: 2em;
+}
+
+#z {
+    width: 1em;
+    height: auto;
+    margin: 2em;
+}
+
+#bar {
+    width: 24.5em;
+    height: auto;
+    margin: 2em;
+}
+
+#point {
+    width: 1em;
+    height: auto;
+    margin: 2em;
+}
+
+#heart {
+    width: 3.8em;
+    height: auto;
+    margin: 2em;
+}
+
+.button {
+    height: 5.5em;
+    width: auto;
+    margin: 2em;
+}
+
+#shine {
+    width: 3.3em;
+    height: auto;
+    background-color: rgb(209, 206, 206);
+}
