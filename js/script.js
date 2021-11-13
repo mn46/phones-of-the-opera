@@ -59,9 +59,14 @@ function start() {
     document.querySelector("#sprite_applause").classList.add("fading_objects");
     document.querySelector("#sprite_angry").classList.add("fading_objects");
 
+    // missing phone
+
+    document.querySelector("#container_phone").addEventListener("animationiteration", missPhone);
+
     // clicking good objects
 
     document.querySelector("#container_phone").addEventListener("click", clickPhone);
+
 
     // clicking bad objects
 
@@ -115,6 +120,19 @@ function restartBadelement() {
     this.classList.add("fading_objects");
 }
 
+function missPhone() {
+    console.log("missPhone");
+    this.firstElementChild.addEventListener("animationend", restartBadelement);
+    removeHealth();
+}
+
+function loseGame() {
+
+    if (lives === 0) {
+
+    }
+
+}
 
 
 window.addEventListener("load", start);
