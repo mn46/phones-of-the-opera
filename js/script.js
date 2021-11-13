@@ -58,31 +58,61 @@ function start() {
     document.querySelector("#sprite_phone").classList.add("fading_objects");
     document.querySelector("#sprite_applause").classList.add("fading_objects");
     document.querySelector("#sprite_angry").classList.add("fading_objects");
+
+    // clicking good objects
+
+    document.querySelector("#container_phone").addEventListener("click", clickPhone);
+
+    // clicking bad objects
+
+    document.querySelector("#container_applause").addEventListener("click", clickBadobject);
+    document.querySelector("#container_angry").addEventListener("click", clickBadobject);
 }
-
-// clicking good objects
-
-document.querySelector("#container_phone").addEventListener("click", clickPhone);
 
 function clickPhone() {
     this.firstElementChild.classList = "";
     this.firstElementChild.classList.add("good_click");
-    // addPoint(); 
+    this.firstElementChild.addEventListener("animationend", restartPhone);
+    addPoint();
 }
-
-// clicking bad objects
-
-document.querySelector("#container_applause").addEventListener("click", clickBadobject);
-document.querySelector("#container_angry").addEventListener("click", clickBadobject);
 
 function clickBadobject() {
     this.firstElementChild.classList = "";
     this.firstElementChild.classList.add("bad_click");
-    // removeHealth();
+    this.firstElementChild.addEventListener("animationend", restartBadelement);
+    removeHealth();
 }
 
 function addPoint() {
-    
+    points++;
+    document.querySelector("#point" + points).classList.add("point");
+}
+
+function removeHealth() {
+    lives--;
+    document.querySelector("#heart" + lives).classList.remove("heart");
+}
+
+// restart phone
+
+function restartPhone() {
+    console.log("restartPhone");
+    this.parentNode.classList.value = "";
+    this.parentNode.classList.add(randomNumber());
+    this.parentNode.addEventListener("animationiteration", randomPosition);
+    this.classList.remove("good_click");
+    this.classList.add("fading_objects");
+}
+
+// restart bad element
+
+function restartBadelement() {
+    console.log("restartBadelement");
+    this.parentNode.classList.value = "";
+    this.parentNode.classList.add(randomNumber());
+    this.parentNode.addEventListener("animationiteration", randomPosition);
+    this.classList.remove("bad_click");
+    this.classList.add("fading_objects");
 }
 
 

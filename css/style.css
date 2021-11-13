@@ -22,13 +22,14 @@ body {
 
 /* the game */
 
-#game_screen {
+/* #game_screen {
     height: 40em;
     aspect-ratio: 16/9;
     position: relative;
-}
+} */
 
-#game_background {
+#game_screen {
+    position: relative;
     max-height: 40em;
     width: auto;
     aspect-ratio: 16/9;
@@ -76,94 +77,13 @@ body {
     top: 16.7%;
     left: 9.4%;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
 }
 
 /* points */
 
-.point1 {
-    height: 1.8em;
-    aspect-ratio: 21/50;
-    margin-right: 0.5em;
-    background-image: url(../assets/point.svg);
-    background-repeat: no-repeat;
-    animation: points 0.5s linear;
-}
-
-.point2 {
-    height: 1.8em;
-    aspect-ratio: 21/50;
-    margin-right: 0.5em;
-    background-image: url(../assets/point.svg);
-    background-repeat: no-repeat;
-    animation: points 0.5s linear;
-}
-
-.point3 {
-    height: 1.8em;
-    aspect-ratio: 21/50;
-    margin-right: 0.5em;
-    background-image: url(../assets/point.svg);
-    background-repeat: no-repeat;
-    animation: points 0.5s linear;
-}
-
-.point4 {
-    height: 1.8em;
-    aspect-ratio: 21/50;
-    margin-right: 0.5em;
-    background-image: url(../assets/point.svg);
-    background-repeat: no-repeat;
-    animation: points 0.5s linear;
-}
-
-.point5 {
-    height: 1.8em;
-    aspect-ratio: 21/50;
-    margin-right: 0.5em;
-    background-image: url(../assets/point.svg);
-    background-repeat: no-repeat;
-    animation: points 0.5s linear;
-}
-
-.point6 {
-    height: 1.8em;
-    aspect-ratio: 21/50;
-    margin-right: 0.5em;
-    background-image: url(../assets/point.svg);
-    background-repeat: no-repeat;
-    animation: points 0.5s linear;
-}
-
-.point7 {
-    height: 1.8em;
-    aspect-ratio: 21/50;
-    margin-right: 0.5em;
-    background-image: url(../assets/point.svg);
-    background-repeat: no-repeat;
-    animation: points 0.5s linear;
-}
-
-.point8 {
-    height: 1.8em;
-    aspect-ratio: 21/50;
-    margin-right: 0.5em;
-    background-image: url(../assets/point.svg);
-    background-repeat: no-repeat;
-    animation: points 0.5s linear;
-}
-
-.point9 {
-    height: 1.8em;
-    aspect-ratio: 21/50;
-    margin-right: 0.5em;
-    background-image: url(../assets/point.svg);
-    background-repeat: no-repeat;
-    animation: points 0.5s linear;
-}
-
-.point10 {
+.point {
     height: 1.8em;
     aspect-ratio: 21/50;
     margin-right: 0.5em;
@@ -177,10 +97,11 @@ body {
 #time {
     position: absolute;
     top: 5%;
-    left: 80%;
+    left: 90%;
     height: 3em;
     width: auto;
-    font-size: 1em;
+    font-size: 3em;
+    color: blanchedalmond;
 }
 
 
@@ -217,10 +138,9 @@ body {
     position: absolute;
     height: 8em;
     aspect-ratio: 41/30;
-    animation: fade_out 4s infinite;
 }
 
-.sprite_phone {
+#sprite_phone {
     height: 8em;
     aspect-ratio: 41/30;
     background-image: url(../assets/phone.svg);
@@ -233,11 +153,9 @@ body {
     position: absolute;
     height: 7em;
     aspect-ratio: 16/10;
-    animation: fade_out 4s infinite;
-    animation-delay: 3s;
 }
 
-.sprite_applause {
+#sprite_applause {
     height: 7em;
     aspect-ratio: 16/10;
     background-image: url(../assets/wow.svg);
@@ -250,11 +168,9 @@ body {
     position: absolute;
     height: 7em;
     aspect-ratio: 16/10;
-    animation: fade_out 4s infinite;
-    animation-delay: 6s;
 }
 
-.sprite_angry {
+#sprite_angry {
     height: 7em;
     aspect-ratio: 16/10;
     background-image: url(../assets/angry.svg);
@@ -330,18 +246,38 @@ body {
 
 /* animations */
 
+.fading_objects {
+    animation: fade_out 3s infinite;
+}
+
+.good_click {
+    animation: happy 0.8s;
+}
+
+.bad_click {
+    animation: bad 1s;
+}
+
+/* animations - keyframes */
+
 @keyframes fade_out {
-    0% {opacity: 0%;}
+    0% {opacity: 100%;}
+    40% {opacity: 100%}
     100% {opacity: 0%;}
 }
 
-@keyframes good_click {
-    0% {transform: scaleZ(110%); opacity: 100%;}
-    50% {transform: scaleZ(130%); opacity: 100%;}
-    100% {transform: scaleZ(0%); opacity: 100%;}
+@keyframes happy {
+    0% {transform: scale(110%); opacity: 100%;}
+    40% {transform: scale(130%); opacity: 100%;}
+    100% {transform: scale(0%); opacity: 100%;}
 }
 
 @keyframes points {
     0% {opacity: 0%;}
     100% {opacity: 100%;}
+}
+
+@keyframes bad {
+    0% {transform: translateY(0%); opacity: 100%;}
+    100% {transform: translateY(200%); opacity: 0%;}
 }
