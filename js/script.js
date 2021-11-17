@@ -21,29 +21,46 @@ function startTimer() {
     }
 }
 
-// objects - setting position
+window.addEventListener("load", main);
+sound();
 
-function randomNumber() {
-    let rn = Math.floor(Math.random() * 13 + 1);
-    return "position" + rn;
+// /* sound button */
+
+function sound() {
+document.querySelector("#container_sound").classList.add("sound_on");
+document.querySelector("#container_sound").addEventListener("click", soundOff);
 }
 
-function setPosition() {
-    document.querySelector("#container_phone").classList.add(randomNumber());
-    document.querySelector("#container_applause").classList.add(randomNumber());
-    document.querySelector("#container_angry").classList.add(randomNumber());
+function soundOff() {
+    console.log("soundOff");
+    document.querySelector("#container_sound").classList.toggle("sound_off");
 }
 
-// objects - showing randomly
-
-function randomPosition() {
-    this.classList = "";
-    this.classList.add(randomNumber());
+// main menu
+function main() {
+    document.querySelector("#play_button").addEventListener("click", menuStart);
+    document.querySelector("#instruction_play_button").addEventListener("click", menuStart);
+    document.querySelector("#instructions_button").addEventListener("click", showInstructions);
 }
 
-// function start
+function menuStart() {
+    document.querySelector("#menu").classList.add("hidden");
+    start();
+}
+
+function showInstructions() {
+    
+    document.querySelector("#instruction_text").classList.remove("hidden");
+    document.querySelector("#instruction_play_button").classList.remove("hidden");
+}
+
+
+// starting the game
 
 function start() {
+
+    document.querySelector("#menu").classList.add("hidden");
+    document.querySelector("#game_screen").classList.remove("hidden");
 
     showTimer ();
     setPosition();
@@ -74,6 +91,27 @@ function start() {
     document.querySelector("#container_angry").addEventListener("click", clickBadobject);
 }
 
+// objects - setting position
+
+function randomNumber() {
+    let rn = Math.floor(Math.random() * 13 + 1);
+    return "position" + rn;
+}
+
+function setPosition() {
+    document.querySelector("#container_phone").classList.add(randomNumber());
+    document.querySelector("#container_applause").classList.add(randomNumber());
+    document.querySelector("#container_angry").classList.add(randomNumber());
+}
+
+// objects - showing randomly
+
+function randomPosition() {
+    this.classList = "";
+    this.classList.add(randomNumber());
+}
+
+
 function clickPhone() {
     this.firstElementChild.classList = "";
     this.firstElementChild.classList.add("good_click");
@@ -91,11 +129,17 @@ function clickBadobject() {
 function addPoint() {
     points++;
     document.querySelector("#point" + points).classList.add("point");
+    if (points > 9) {
+        winGame();
+    }
 }
 
 function removeHealth() {
     lives--;
     document.querySelector("#heart" + lives).classList.remove("heart");
+    if (lives < 1) {
+        loseGame();
+    }
 }
 
 // restart phone
@@ -126,16 +170,40 @@ function missPhone() {
     removeHealth();
 }
 
-function loseGame() {
-
-    if (lives === 0) {
-
-    }
-
+function winGame() {
+    document.querySelector("#win").classList.remove("hidden");
+    document.querySelector("#win_illustration").classList.remove("hidden");
+    document.querySelector("#win_text").classList.remove("hidden");
+    document.querySelector("#lose_replay_button").addEventListener("click", winPlayAgain);
 }
 
+function winPlayAgain() {
+    document.querySelector("#win").classList.add("hidden");
+    document.querySelector("#win_illustration").classList.add("hidden");
+    document.querySelector("#win_text").classList.add("hidden");
+    lives = 5;
+    document.querySelector("#heart" + lives).classList.add("heart");
+    points = 0;
+    start();
+}
 
-window.addEventListener("load", start);
+function loseGame() {
+    document.querySelector("#lose").classList.remove("hidden");
+    document.querySelector("#lose_illustration").classList.remove("hidden");
+    document.querySelector("#lose_text").classList.remove("hidden");
+    document.querySelector("#lose_replay_button").addEventListener("click", losePlayAgain);
+}
+
+function losePlayAgain() {
+    document.querySelector("#lose").classList.add("hidden");
+    document.querySelector("#lose_illustration").classList.add("hidden");
+    document.querySelector("#lose_text").classList.add("hidden");
+    lives = 5;
+    document.querySelector("#heart" + lives).classList.add("heart");
+    points = 0;
+    start();
+}
+
 
 
 
@@ -154,17 +222,7 @@ window.addEventListener("load", start);
 
 // let objects_number = Math.floor(Math.random() * 6 + 1);
 
-// /* sound button */
 
-// document.querySelector("#container_sound").classList.add("sound_on");
-
-// document.querySelector("#container_sound").addEventListener("click", soundOff);
-
-
-// function soundOff() {
-//     console.log("soundOff");
-//     document.querySelector("#container_sound").classList.toggle("sound_off");
-// }
 
 // /* objects appearing in random places */
 

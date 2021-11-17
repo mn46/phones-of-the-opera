@@ -3,6 +3,77 @@ body {
     font-size: 16px;
 }
 
+h1 {
+    font-family: Freight Display Pro Book;
+    font-size: 6em;
+    color: #e52c61;
+}
+
+h3 {
+    font-family: Freight Display Pro Book;
+    font-size: 1.8em;
+    color: #e52c61;
+}
+
+#game {
+    position: relative;
+    max-height: 40em;
+    aspect-ratio: 16/9;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/* buttons */
+
+#menu {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    aspect-ratio: 16/9;
+    background-image: url(../assets/main.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#play_button {
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    height: 3em;
+    aspect-ratio: 75/28;
+    background-image: url(../assets/play.svg);
+    background-repeat: no-repeat;
+}
+
+#instructions_button {
+    position: absolute;
+    top: 75%;
+    left: 55%;
+    height: 3em;
+    aspect-ratio: 300/79;
+    background-image: url(../assets/instructions-button.svg);
+    background-repeat: no-repeat;
+}
+
+#win_replay_button {
+    position: absolute;
+    height: 3em;
+    aspect-ratio: 315/89;
+    background-image: url(../assets/play-again.svg);
+    background-repeat: no-repeat;
+}
+
+#lose_replay_button {
+    position: absolute;
+    height: 3em;
+    aspect-ratio: 315/89;
+    background-image: url(../assets/play-again.svg);
+    background-repeat: no-repeat;
+}
+
 #container_sound {
     height: 2.5em;
     width: auto;
@@ -20,17 +91,9 @@ body {
     background-repeat: no-repeat;
 }
 
-/* the game */
-
-/* #game_screen {
-    height: 40em;
-    aspect-ratio: 16/9;
-    position: relative;
-} */
-
 #game_screen {
-    position: relative;
-    max-height: 40em;
+    position: absolute;
+    height: 100%;
     width: auto;
     aspect-ratio: 16/9;
     background-image: url(../assets/background.svg);
@@ -39,17 +102,40 @@ body {
     background-size: cover;
 }
 
+/* instruction */
+
+#instruction_text {
+    position: relative;
+    background-image: url(../assets/instruction.svg);
+    background-repeat: no-repeat;
+    max-height: 30em;
+    aspect-ratio: 133/75;
+    z-index: 5;
+    left: 12%;
+    top: 10%;
+}
+
+#instruction_play_button {
+    position: relative;
+    background-image: url(../assets/play.svg);
+    background-repeat: no-repeat;
+    height: 3em;
+    z-index: 6;
+    left: 42%;
+    top: 80%;
+}
+
 /* points */
 
 #health {
     position: absolute;
     top: 5%;
-    left: 3%;
+    left: 4%;
     height: 3em;
     width: 18em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
     align-items: center;
 }
 
@@ -177,6 +263,86 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Winning screen */
+
+#win {
+    position: relative;
+    height: 35em;
+    aspect-ratio: 16/9;
+    background-color: #fff8f8;
+    border-radius: 2em;
+    top: 5%;
+    left: 6.5%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
+}
+
+#win_illustration {
+    position: relative;
+    height: 30em;
+    aspect-ratio: 8/9;
+}
+
+#win_pavarotti {
+    position: absolute;
+    height: 25em;
+    aspect-ratio: 18/25;
+    background-image: url(../assets/happy_pavarotti.svg);
+    background-repeat: no-repeat;
+    top: 20%;
+    left: 30%;
+}
+
+#tulip1 {
+    position: absolute;
+    height: 8em;
+    aspect-ratio: 62/139;
+    background-image: url(../assets/blue_tulip.svg);
+    background-repeat: no-repeat;
+    top: 7%;
+    left: 95%;
+}
+
+#tulip2 {
+    position: absolute;
+    height: 7.3em;
+    aspect-ratio: 80/129;
+    background-image: url(../assets/pink_tulip.svg);
+    background-repeat: no-repeat;
+    top: 60%;
+    left: 90%;
+    animation: pink_tulip 1s linear infinite;
+}
+
+#rose {
+    position: absolute;
+    height: 5em;
+    aspect-ratio: 113/94;
+    background-image: url(../assets/rose.svg);
+    background-repeat: no-repeat;
+    top: 70%;
+    left: 20%;
+    animation: rose 1s linear infinite;
+}
+
+
+
+/* losing screen */
+
+#lose {
+    position: absolute;
+    height: 35em;
+    aspect-ratio: 16/9;
+    background-color: #fff8f8;
+    border-radius: 2em;
+    top: 5%;
+    left: 6.5%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+}
+
 /* positions */
 
 .position1 {
@@ -280,4 +446,28 @@ body {
 @keyframes bad {
     0% {transform: translateY(0%); opacity: 100%;}
     100% {transform: translateY(200%); opacity: 0%;}
+}
+
+@keyframes rose {
+    0% {transform: rotateZ(0deg);}
+    25% {transform: rotateZ(8deg);}
+    50% {transform: translateZ(0deg);}
+    75% {transform: rotateZ(-8deg);}
+    100% {transform: translateZ(0deg);}
+}
+
+@keyframes pink_tulip {
+    0% {transform: rotateZ(0deg);}
+    25% {transform: rotateZ(-8deg);}
+    50% {transform: translateZ(0deg);}
+    75% {transform: rotateZ(8deg);}
+    100% {transform: translateZ(0deg);}
+}
+
+@keyframes blue_tulip {
+    0% {transform: rotateZ(0deg);}
+    25% {transform: rotateZ(-8deg);}
+    50% {transform: translateZ(0deg);}
+    75% {transform: rotateZ(8deg);}
+    100% {transform: translateZ(0deg);}
 }

@@ -21,24 +21,39 @@
     </header>
 
     <main>
+
+        
         
         <p>Help Pavarotti to have a wonderful show and catch all disrespectful people who didn't mute phones!</p>
 
-        <div id="game_screen">
+        <div id="game">
+
+            <div id="menu">
+
+                <div id="play_button"></div>
+                <div id="instructions_button"></div>
+            
+                <div id="instruction_text" class="hidden">
+                <div id="instruction_play_button" class="hidden"></div>
+                </div>
+
+            </div>
+
+            <div id="game_screen" class="hidden">
 
             <!-- <div id="game_background"></div> -->
 
-            <div id="health">
+                <div id="health">
                 <div id="heart0" class="heart"></div>
                 <div id="heart1" class="heart"></div>
                 <div id="heart2" class="heart"></div>
                 <div id="heart3" class="heart"></div>
                 <div id="heart4" class="heart"></div>
-            </div>
+                </div>
 
-            <div id="applause"></div>
+                <div id="applause"></div>
 
-            <div id="points_container">
+                <div id="points_container">
                 <div id="point1"></div>
                 <div id="point2"></div>
                 <div id="point3"></div>
@@ -49,26 +64,63 @@
                 <div id="point8"></div>
                 <div id="point9"></div>
                 <div id="point10"></div>
-            </div>
+                </div>
 
-            <div id="time"></div>
+                <div id="time"></div>
 
-            <div id="container_pavarotti">
-                <div class="sprite_pavarotti"></div>
-            </div>
+                <div id="container_pavarotti">
+                    <div class="sprite_pavarotti"></div>
+                </div>
 
-            <div id="container_phone">
-                <div id="sprite_phone"></div>
-            </div>
+                <div id="container_phone">
+                    <div id="sprite_phone"></div>
+                </div>
 
-            <div id="container_applause">
-                <div id="sprite_applause"></div>
-            </div>
+                <div id="container_applause">
+                    <div id="sprite_applause"></div>
+                </div>
 
-            <div id="container_angry">
-                <div id="sprite_angry"></div>
-            </div>
+                <div id="container_angry">
+                    <div id="sprite_angry"></div>
+                </div>
         
+            </div>
+
+            <!-- Winning screen -->
+
+            <div id="win" class="hidden">
+                <div id="win_illustration" class="hidden">
+                    <div id="win_pavarotti"></div>
+                    <div id="tulip1"></div>
+                    <div id="tulip2"></div>
+                    <div id="rose"></div>
+                </div>
+                <div id="win_text" class="hidden">
+                    <h1>Bravo!</h1>
+                    <h3>You saved the show!</h3>
+                    <div id="win_replay_button"></div>
+                </div>
+            </div>
+
+            <!-- Losing screen -->
+
+            <div id="lose" class="hidden">
+                <div id="lose_illustration" class="hidden">
+                    <div id="lose_pavarotti"></div>
+                    <div id="tear1"></div>
+                    <div id="tear2"></div>
+                    <div id="tear3"></div>
+                    <div id="tear4"></div>
+                    <div id="tear5"></div>
+                    <div id="tear6"></div>
+                </div>
+                <div id="lose_text" class="hidden">
+                    <h1>Oh no...</h1>
+                    <h3>The show is over!</h3>
+                    <div id="lose_replay_button"></div>
+                </div>
+            </div>
+
         </div>
 
     </main>
