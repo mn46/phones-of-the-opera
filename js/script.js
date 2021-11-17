@@ -49,7 +49,6 @@ function menuStart() {
 }
 
 function showInstructions() {
-    
     document.querySelector("#instruction_text").classList.remove("hidden");
     document.querySelector("#instruction_play_button").classList.remove("hidden");
 }
@@ -113,14 +112,16 @@ function randomPosition() {
 
 
 function clickPhone() {
-    this.firstElementChild.classList = "";
+    this.removeEventListener("click", clickPhone);
+    this.firstElementChild.classList.remove("fading_objects");
     this.firstElementChild.classList.add("good_click");
     this.firstElementChild.addEventListener("animationend", restartPhone);
     addPoint();
 }
 
 function clickBadobject() {
-    this.firstElementChild.classList = "";
+    this.removeEventListener("click", clickBadobject);
+    this.firstElementChild.classList.remove("fading_objects");
     this.firstElementChild.classList.add("bad_click");
     this.firstElementChild.addEventListener("animationend", restartBadelement);
     removeHealth();
@@ -146,22 +147,22 @@ function removeHealth() {
 
 function restartPhone() {
     console.log("restartPhone");
-    this.parentNode.classList.value = "";
     this.parentNode.classList.add(randomNumber());
     this.parentNode.addEventListener("animationiteration", randomPosition);
     this.classList.remove("good_click");
     this.classList.add("fading_objects");
+    this.parentNode.addEventListener("click", clickPhone);
 }
 
 // restart bad element
 
 function restartBadelement() {
     console.log("restartBadelement");
-    this.parentNode.classList.value = "";
     this.parentNode.classList.add(randomNumber());
     this.parentNode.addEventListener("animationiteration", randomPosition);
     this.classList.remove("bad_click");
     this.classList.add("fading_objects");
+    this.parentNode.addEventListener("click", clickBadobject);
 }
 
 function missPhone() {
@@ -171,37 +172,60 @@ function missPhone() {
 }
 
 function winGame() {
+    console.log("winGame");
+    endGame();
     document.querySelector("#win").classList.remove("hidden");
     document.querySelector("#win_illustration").classList.remove("hidden");
     document.querySelector("#win_text").classList.remove("hidden");
-    document.querySelector("#lose_replay_button").addEventListener("click", winPlayAgain);
+    document.querySelector("#win_replay_button").addEventListener("click", winReplay);
 }
 
-function winPlayAgain() {
+function winReplay() {
+    console.log("replay");
     document.querySelector("#win").classList.add("hidden");
     document.querySelector("#win_illustration").classList.add("hidden");
     document.querySelector("#win_text").classList.add("hidden");
+    document.querySelector("#heart0").classList.add("heart");
+    document.querySelector("#heart1").classList.add("heart");
+    document.querySelector("#heart2").classList.add("heart");
+    document.querySelector("#heart3").classList.add("heart");
+    document.querySelector("#heart4").classList.add("heart");
     lives = 5;
-    document.querySelector("#heart" + lives).classList.add("heart");
     points = 0;
+    time = 60;
     start();
 }
 
 function loseGame() {
+    console.log("loseGame");
+    endGame();
     document.querySelector("#lose").classList.remove("hidden");
     document.querySelector("#lose_illustration").classList.remove("hidden");
     document.querySelector("#lose_text").classList.remove("hidden");
-    document.querySelector("#lose_replay_button").addEventListener("click", losePlayAgain);
+    document.querySelector("#lose_replay_button").addEventListener("click", loseReplay);
 }
 
-function losePlayAgain() {
+function loseReplay() {
+    console.log("replay");
     document.querySelector("#lose").classList.add("hidden");
     document.querySelector("#lose_illustration").classList.add("hidden");
     document.querySelector("#lose_text").classList.add("hidden");
+    document.querySelector("#heart0").classList.add("heart");
+    document.querySelector("#heart1").classList.add("heart");
+    document.querySelector("#heart2").classList.add("heart");
+    document.querySelector("#heart3").classList.add("heart");
+    document.querySelector("#heart4").classList.add("heart");
     lives = 5;
-    document.querySelector("#heart" + lives).classList.add("heart");
     points = 0;
+    time = 60;
     start();
+}
+
+function endGame() {
+    document.querySelector("#container_phone").removeEventListener("animationiteration", randomPosition);
+    document.querySelector("#container_applause").removeEventListener("animationiteration", randomPosition);
+    document.querySelector("#container_angry").removeEventListener("animationiteration", randomPosition);
+    document.querySelector("#container_phone").removeEventListener("animationiteration", missPhone);
 }
 
 
