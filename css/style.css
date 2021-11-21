@@ -20,13 +20,38 @@ h3 {
     max-height: 45em;
     aspect-ratio: 16/9;
     margin: auto;
+    overflow: hidden;
 }
 
 .hidden {
     visibility: hidden;
 }
 
-/* buttons */
+/* first screen */
+
+#pre-start {
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 16/9;
+    z-index: 7;
+}
+
+#background {
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 16/9;
+    background-color: rgb(3, 2, 15);
+}
+
+p {
+    position: absolute;
+    color: blanchedalmond;
+    font-size: 300%;
+    top: 35%;
+    left: 40%;
+}
+
+/* main menu */
 
 #menu {
     position: absolute;
@@ -37,7 +62,105 @@ h3 {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    
 }
+
+#black {
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 16/9;
+    background-color: rgb(3, 2, 15);
+    z-index: 5;
+}
+
+#courtain {
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 16/9;
+    background-image: url(../assets/courtain.svg);
+    z-index: 4;
+}
+
+/* stars */
+
+#star1 {
+    position: absolute;
+    height: 6%;
+    aspect-ratio: 1/1;
+    background-image: url(../assets/shine.svg);
+    background-repeat: no-repeat;
+    top: 10%;
+    left: 70%;
+    animation: smallstar 1s infinite;
+}
+
+#star2 {
+    position: absolute;
+    height: 12%;
+    aspect-ratio: 1/1;
+    background-image: url(../assets/shine.svg);
+    background-repeat: no-repeat;
+    top: 25%;
+    left: 65%;
+    animation: bigstar 3s infinite;
+}
+
+#star3 {
+    position: absolute;
+    height: 6%;
+    aspect-ratio: 1/1;
+    background-image: url(../assets/shine.svg);
+    background-repeat: no-repeat;
+    top: 25%;
+    left: 5%;
+    animation: smallstar 2s infinite;
+}
+
+#star4 {
+    position: absolute;
+    height: 12%;
+    aspect-ratio: 1/1;
+    background-image: url(../assets/shine.svg);
+    background-repeat: no-repeat;
+    top: 50%;
+    left: 12%;
+    animation: bigstar 1s infinite;
+}
+
+#star5 {
+    position: absolute;
+    height: 6%;
+    aspect-ratio: 1/1;
+    background-image: url(../assets/shine.svg);
+    background-repeat: no-repeat;
+    top: 7%;
+    left: 50%;
+    animation: smallstar 3s infinite;
+}
+
+#star6 {
+    position: absolute;
+    height: 12%;
+    aspect-ratio: 1/1;
+    background-image: url(../assets/shine.svg);
+    background-repeat: no-repeat;
+    top: 10%;
+    left: 20%;
+    animation: bigstar 2s infinite;
+}
+
+#star7 {
+    position: absolute;
+    height: 6%;
+    aspect-ratio: 1/1;
+    background-image: url(../assets/shine.svg);
+    background-repeat: no-repeat;
+    top: 40%;
+    left: 90%;
+    animation: smallstar 1s infinite;
+}
+
+/* buttons */
 
 #play_button {
     position: absolute;
@@ -75,19 +198,27 @@ h3 {
     background-repeat: no-repeat;
 }
 
-#container_sound {
-    height: 2.5em;
+#sound_button {
+    position: absolute;
+    height: 6%;
     width: auto;
+    top: 4%;
+    left: 93%;
+    z-index: 6;
 }
 
 /* for JS */
 
 .sound_on {
+    height: 6%;
+    aspect-ratio: 107/75;
     background-image: url(../assets/sound.svg);
     background-repeat: no-repeat;
 }
 
 .sound_off {
+    height: 6%;
+    aspect-ratio: 107/75;
     background-image: url(../assets/no-sound.svg);
     background-repeat: no-repeat;
 }
@@ -196,14 +327,14 @@ h3 {
 
 #container_pavarotti {
     position: absolute;
-    height: 20em;
+    height: 60%;
     aspect-ratio: 131/150;
     left: 40%;
     top: 8.5%;
 }
 
 .sprite_pavarotti {
-    height: 24em;
+    height: 100%;
     aspect-ratio: 131/150;
     background-image: url(../assets/singing-pavarotti.svg);
     background-repeat: no-repeat;
@@ -212,55 +343,92 @@ h3 {
 /* for JS */
 
 .angry_pavarotti {
-    height: 24em;
+    height: 100%;
     aspect-ratio: 131/150;
     background-image: url(../assets/angry-pavarotti.svg);
     background-repeat: no-repeat;
 }
 
 
-/* phone bubble */
+/* phone bubbles */
 
 #container_phone {
     position: absolute;
-    height: 8em;
+    height: 14%;
     aspect-ratio: 41/30;
 }
 
 #sprite_phone {
-    height: 8em;
+    height: 100%;
     aspect-ratio: 41/30;
     background-image: url(../assets/phone.svg);
     background-repeat: no-repeat;
 }
 
-/* applause bubble */
+#container_phone2 {
+    position: absolute;
+    height: 14%;
+    aspect-ratio: 41/30;
+}
+
+#sprite_phone2 {
+    height: 100%;
+    aspect-ratio: 41/30;
+    background-image: url(../assets/phone.svg);
+    background-repeat: no-repeat;
+}
+
+#container_phone3 {
+    position: absolute;
+    height: 14%;
+    aspect-ratio: 41/30;
+}
+
+#sprite_phone3 {
+    height: 100%;
+    aspect-ratio: 41/30;
+    background-image: url(../assets/phone.svg);
+    background-repeat: no-repeat;
+}
+
+/* applause bubbles */
 
 #container_applause {
     position: absolute;
-    height: 7em;
+    height: 14%;
     aspect-ratio: 16/10;
 }
 
 #sprite_applause {
-    height: 7em;
+    height: 100%;
     aspect-ratio: 16/10;
-    background-image: url(../assets/wow.svg);
+    background-image: url(../assets/clap.svg);
     background-repeat: no-repeat;
 }
 
-/* angry bubble */
-
-#container_angry {
+#container_applause2 {
     position: absolute;
-    height: 7em;
+    height: 14%;
     aspect-ratio: 16/10;
 }
 
-#sprite_angry {
-    height: 7em;
+#sprite_applause2 {
+    height: 100%;
     aspect-ratio: 16/10;
-    background-image: url(../assets/angry.svg);
+    background-image: url(../assets/clap.svg);
+    background-repeat: no-repeat;
+}
+
+#container_applause3 {
+    position: absolute;
+    height: 14%;
+    aspect-ratio: 16/10;
+}
+
+#sprite_applause3 {
+    height: 100%;
+    aspect-ratio: 16/10;
+    background-image: url(../assets/clap.svg);
     background-repeat: no-repeat;
 }
 
@@ -427,9 +595,7 @@ h3 {
     animation: tear6 0.3s linear infinite;
 }
 
-
-
-/* positions */
+/* positions for phones */
 
 .position1 {
     left: 10%;
@@ -437,63 +603,63 @@ h3 {
 }
 
 .position2 {
-    left: 20%;
+    left: 30%;
     top: 70%;
 }
 
 .position3 {
-    left: 30%;
+    left: 50%;
     top: 80%;
 }
 
 .position4 {
-    left: 40%;
+    left: 70%;
     top: 60%;
 }
 
 .position5 {
-    left: 50%;
+    left: 90%;
     top: 70%;
 }
 
 .position6 {
-    left: 60%;
-    top: 80%;
+    left: 20%;
+    top: 75%;
 }
 
 .position7 {
-    left: 70%;
-    top: 60%;
+    left: 40%;
+    top: 65%;
 }
 
 .position8 {
-    left: 80%;
-    top: 70%;
+    left: 60%;
+    top: 90%;
 }
 
 .position9 {
-    left: 70%;
-    top: 80%;
+    left: 80;
+    top: 75%;
 }
 
 .position10 {
     left: 60%;
-    top: 60%;
+    top: 55%;
 }
 
 .position11 {
-    left: 50%;
-    top: 70%;
+    left: 40%;
+    top: 90%;
 }
 
 .position12 {
-    left: 40%;
-    top: 80%;
+    left: 60%;
+    top: 55%;
 }
 
 .position13 {
-    left: 30%;
-    top: 60%;
+    left: 50%;
+    top: 80%;
 }
 
 /* animations */
@@ -508,6 +674,17 @@ h3 {
 
 .bad_click {
     animation: bad 1s;
+}
+
+.lights {
+    animation: lightup 3s;
+    animation-fill-mode: forwards;
+}
+
+.courtain {
+    animation: courtain 2s;
+    animation-delay: 1.8s;
+    animation-fill-mode: forwards;
 }
 
 /* animations - keyframes */
@@ -580,4 +757,27 @@ h3 {
 
 @keyframes tear6 {
     100% {transform: translateX(-130%) translateY(-100%) rotate(-15deg);}
+}
+
+@keyframes smallstar {
+    0% {transform: scale(80%);}
+    50% {transform: scale(130%);}
+    100% {transform: scale(80%);}
+}
+
+@keyframes bigstar {
+    0% {transform: scale(100%);}
+    50% {transform: scale(20%);}
+    100% {transform: scale(100%);}
+}
+
+@keyframes lightup {
+    0% {opacity: 100%; transform: translateY(0%);}
+    99% {opacity: 0%; transform: translateY(0%);}
+    100% {opacity: 0%; transform: translateY(120%);}
+}
+
+@keyframes courtain {
+    0% {transform: translateY(0%);}
+    100% {transform: translateY(-120%);}
 }

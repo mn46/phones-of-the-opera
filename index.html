@@ -11,29 +11,41 @@
 
 <body>
 
-    <header>
-        <div id="container_sound">
-            <div class="sound_on"></div>
-        </div>
-
-    </header>
+    <header></header>
 
     <main>
-        <p>Help Pavarotti to have a wonderful show and catch all disrespectful people who didn't mute phones!</p>
 
         <div id="game">
 
-            <div id="menu">
+            <div id="pre-start">
+                <div id="background"></div>
+                <p>Click to start</p>
+            </div>
 
-                <div id="courtain_left"></div>
-                <div id="courtain_right"></div>
+            <div id="sound_button" class="sound_on"></div>
+
+            <div id="menu" class="hidden">
+
+                <div id="black"></div>
+
+                <div id="courtain"></div>
+
+                <div id="star1"></div>
+                <div id="star2"></div>
+                <div id="star3"></div>
+                <div id="star4"></div>
+                <div id="star5"></div>
+                <div id="star6"></div>
+                <div id="star7"></div>
 
                 <div id="play_button"></div>
                 <div id="instructions_button"></div>
             
                 <div id="instruction_text" class="hidden">
-                <div id="instruction_play_button" class="hidden"></div>
+                    <div id="instruction_play_button" class="hidden"></div>
                 </div>
+
+                <audio id="menu_music" src="sounds/overture.mp3"></audio>
 
             </div>
 
@@ -67,7 +79,7 @@
                 <div id="time"></div>
 
                 <div id="container_pavarotti">
-                    <div class="sprite_pavarotti"></div>
+                    <div id="pavarotti" class="sprite_pavarotti"></div>
                 </div>
 
                 <div id="container_phone">
@@ -78,9 +90,23 @@
                     <div id="sprite_applause"></div>
                 </div>
 
-                <div id="container_angry">
-                    <div id="sprite_angry"></div>
+                <div id="container_phone2">
+                    <div id="sprite_phone2"></div>
                 </div>
+
+                <div id="container_applause2">
+                    <div id="sprite_applause2"></div>
+                </div>
+
+                <div id="container_phone3">
+                    <div id="sprite_phone3"></div>
+                </div>
+
+                <div id="container_applause3">
+                    <div id="sprite_applause3"></div>
+                </div>
+
+                <audio id="game_music" src="sounds/game_music.mp3"></audio>
         
             </div>
 
@@ -98,6 +124,7 @@
                     <h3>You saved the show!</h3>
                     <div id="win_replay_button"></div>
                 </div>
+                <audio id="win_music" src="sounds/win.mp3"></audio>
             </div>
 
             <!-- Losing screen -->
@@ -117,15 +144,15 @@
                     <h3>The show is over!</h3>
                     <div id="lose_replay_button"></div>
                 </div>
+
+                <audio id="lose_music" src="sounds/lose.mp3"></audio>
             </div>
 
         </div>
 
     </main>
 
-    <footer>
-        <p>Phones of the Opera 2021</p>
-    </footer>
+    <footer></footer>
 
     <script src="js/script.js"></script>
 
