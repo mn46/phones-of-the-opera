@@ -47,6 +47,9 @@ function soundOff() {
     this.classList.add("sound_off");
     this.addEventListener("click", soundOn);
     gameMusic.muted = true;
+    menuMusic.muted = true;
+    loseMusic.muted = true;
+    winMusic.muted = true;
 }
 
 function soundOn() {
@@ -55,7 +58,22 @@ function soundOn() {
     this.classList.remove("sound_off");
     this.classList.add("sound_on");
     this.addEventListener("click", soundOff);
-    gameMusic.muted = false;
+
+    if (document.querySelector("#menu").classList.contains("hidden")) {
+
+        if (document.querySelector("#win").classList.contains("hidden")
+            && document.querySelector("#lose").classList.contains("hidden")) {
+            gameMusic.muted = false;
+        } else if (document.querySelector("#win").classList.contains("hidden")) {
+            loseMusic.muted = false;
+        } else {
+            winMusic.muted = false;
+        }
+        
+    } else {
+        menuMusic.muted = false;
+    }
+
 }
 
 // main menu
@@ -93,6 +111,7 @@ function playMenumusic() {
 function playMusic() {
     gameMusic.currentTime = 0;
     gameMusic.play();
+    gameMusic.muted = false;
 }
 
 function stopMenumusic() {
@@ -164,14 +183,6 @@ function setPosition() {
 function randomPosition() {
     this.classList = "";
     this.classList.add(randomNumber());
-}
-
-// preventing objects from appearing one on another
-
-const positions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-
-for (let i = 0; i < positions.length; i++) {
-
 }
 
 // objects - animations and behavior
@@ -248,6 +259,7 @@ function winGame() {
     console.log("winGame");
     endGame();
     winMusic.play();
+    winMusic.muted = false;
     document.querySelector("#win").classList.remove("hidden");
     document.querySelector("#win_illustration").classList.remove("hidden");
     document.querySelector("#win_text").classList.remove("hidden");
@@ -287,6 +299,7 @@ function loseGame() {
     console.log("loseGame");
     endGame();
     loseMusic.play();
+    loseMusic.muted = false;
     document.querySelector("#lose").classList.remove("hidden");
     document.querySelector("#lose_illustration").classList.remove("hidden");
     document.querySelector("#lose_text").classList.remove("hidden");
